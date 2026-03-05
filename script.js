@@ -28,7 +28,7 @@ function handleLogin(e) {
   const payoneer = JSON.parse(localStorage.getItem("payoneer")) || [];
 
   const storedUser = payoneer.find(
-    (user) => user.email === email && user.password === password
+    (user) => user.email === email && user.password === password,
   );
 
   if (storedUser) {
@@ -36,7 +36,6 @@ function handleLogin(e) {
     localStorage.setItem("userName", storedUser.name);
 
     alert("Login Successful!");
-    window.location.href = "home.html";
   } else {
     alert("Invalid Email or Password");
   }
